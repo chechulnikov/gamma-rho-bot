@@ -13,18 +13,12 @@ type listener struct {
 }
 
 func (l *listener) start(message chan chatMessage) {
-	attempts := 0
 	for {
 		updates, err := l.getUpdates()
 		if err != nil {
-			if attempts >= 5 {
-				l.error <- fmt.Errorf("can't get updates from telegram: %s", err.Error())
-			}
-
-			attempts++
+			l.error <- fmt.Errorf("can't get updates from telegram: %s", err.Error())
 			continue
 		}
-		attempts = 0
 
 		if len(updates) == 0 {
 			continue
@@ -52,7 +46,7 @@ func (l *listener) getUpdates() ([]telegram.Update, error) {
 	return l.telegramClient.GetUpdates(
 		l.updatesOffset,
 		100,
-		5,
+		60,
 		[]string{"messages"},
 	)
 }
