@@ -1,5 +1,6 @@
 # Grammar Bot
-Simple spell checking Telegram bot. It just reply on invalid text messages and pass a revised version.
+Simple spell check
+Telegram bot. It just reply on invalid text messages and pass a revised version.
 
 ## How to use
 1. Create a bot in Telegram via BotFather bot. You should get bot token.
