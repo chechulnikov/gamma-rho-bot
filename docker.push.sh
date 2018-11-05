@@ -1,2 +1,2 @@
 #!/bin/bash
-docker push grammar-bot
+docker push $GRAMMAR_BOT_IMAGE
