@@ -2,8 +2,8 @@ package spell
 
 import (
 	"fmt"
-	"grammar-bot/bing"
-	"grammar-bot/telegram"
+	"gamma-rho-bot/bing"
+	"gamma-rho-bot/telegram"
 )
 
 type Settings struct {

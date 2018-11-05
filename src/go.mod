@@ -1,1 +1,1 @@
-module grammar-bot
+module gamma-rho-bot

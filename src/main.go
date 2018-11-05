@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"grammar-bot/spell"
+	"gamma-rho-bot/spell"
 	"log"
 )
 

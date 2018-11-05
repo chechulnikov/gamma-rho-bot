@@ -2,7 +2,8 @@ package spell
 
 import (
 	"fmt"
-	"grammar-bot/telegram"
+	"gamma-rho-bot/telegram"
+	"log"
 )
 
 type listener struct {
@@ -14,11 +15,14 @@ type listener struct {
 
 func (l *listener) start(message chan chatMessage) {
 	for {
+		log.Print("getUpdates started...")
 		updates, err := l.getUpdates()
 		if err != nil {
 			l.error <- fmt.Errorf("can't get updates from telegram: %s", err.Error())
 			continue
 		}
+
+		log.Print("getUpdates finished")
 
 		if len(updates) == 0 {
 			continue

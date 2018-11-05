@@ -2,7 +2,8 @@ package spell
 
 import (
 	"fmt"
-	"grammar-bot/bing"
+	"gamma-rho-bot/bing"
+	"log"
 	"strings"
 )
 
@@ -12,11 +13,13 @@ type corrector struct {
 }
 
 func (c *corrector) checkAndCorrect(message string) (bool, string) {
+	log.Print("spell check request started...")
 	checkingResult, err := c.spellCheckerAPIClient.Check(message)
 	if err != nil {
 		c.error <- err
 		return false, ""
 	}
+	log.Print("spell check request finished")
 
 	if len(checkingResult.FlaggedTokens) == 0 {
 		return false, ""
