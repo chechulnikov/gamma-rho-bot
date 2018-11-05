@@ -1,4 +1,4 @@
-# Grammar Bot
+# γρ-bot
 Simple spell check
 Telegram bot. It just reply on invalid text messages and pass a revised version.
 
