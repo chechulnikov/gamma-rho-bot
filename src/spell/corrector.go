@@ -13,10 +13,11 @@ type corrector struct {
 }
 
 func (c *corrector) checkAndCorrect(message string) (bool, string) {
-	if strings.TrimSpace(message) == "" {
+	message = strings.TrimSpace(message)
+	if message == "" {
 		return false, ""
 	}
-	
+
 	log.Printf("spell check request started...")
 	checkingResult, err := c.spellCheckerAPIClient.Check(message)
 	if err != nil {

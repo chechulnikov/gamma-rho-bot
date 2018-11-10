@@ -3,6 +3,7 @@ package spell
 import (
 	"fmt"
 	"gamma-rho-bot/telegram"
+	"strings"
 )
 
 type listener struct {
@@ -31,6 +32,11 @@ func (l *listener) start(message chan chatMessage) {
 				if _, ok := l.chatsIds[update.Message.Chat.Id]; !ok {
 					continue
 				}
+			}
+
+			update.Message.Text = strings.TrimSpace(update.Message.Text)
+			if update.Message.Text == "" {
+				continue
 			}
 
 			message <- chatMessage{
