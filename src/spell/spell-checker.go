@@ -2,7 +2,6 @@ package spell
 
 import (
 	"fmt"
-	"time"
 )
 
 type spellChecker struct {
@@ -13,21 +12,20 @@ type spellChecker struct {
 
 func (sc *spellChecker) Start() {
 	message := make(chan chatMessage)
-
 	go sc.listener.start(message)
-
 	for {
-		receivedMessage := <-message
-		isRevised, revisedText := sc.corrector.checkAndCorrect(receivedMessage.text)
+		go sc.handleMessage(<-message)
+	}
+}
 
-		if isRevised {
-			revisedText = fmt.Sprintf("✨ %s", revisedText)
-			sc.sender.send(chatMessage{
-				chatId:           receivedMessage.chatId,
-				text:             revisedText,
-				replyToMessageId: receivedMessage.id,
-			})
-		}
-		time.Sleep(time.Second)
+func (sc *spellChecker) handleMessage(message chatMessage) {
+	isRevised, revisedText := sc.corrector.checkAndCorrect(message.text)
+	if isRevised {
+		revisedText = fmt.Sprintf("✨ %s", revisedText)
+		sc.sender.send(chatMessage{
+			chatId:           message.chatId,
+			text:             revisedText,
+			replyToMessageId: message.id,
+		})
 	}
 }
