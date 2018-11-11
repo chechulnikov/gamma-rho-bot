@@ -3,7 +3,6 @@ package spell
 import (
 	"fmt"
 	"gamma-rho-bot/bing"
-	"log"
 	"strings"
 )
 
@@ -18,13 +17,11 @@ func (c *corrector) checkAndCorrect(message string) (bool, string) {
 		return false, ""
 	}
 
-	log.Printf("spell check request started...")
 	checkingResult, err := c.spellCheckerAPIClient.Check(message)
 	if err != nil {
 		c.error <- err
 		return false, ""
 	}
-	log.Print("spell check request finished")
 
 	if len(checkingResult.FlaggedTokens) == 0 {
 		return false, ""
