@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"gamma-rho-bot/spell"
+	"gamma-rho-bot/bot"
 	"log"
 )
 
@@ -17,14 +17,14 @@ func main() {
 	err := make(chan error)
 	go logErrors(err)
 
-	spellChecker, e := spell.NewChecker(spell.Settings{
+	spellChecker, e := bot.New(bot.Settings{
 		TelegramToken:   config.telegramBotToken,
 		ChatsIds:        config.chatsIds,
 		BingSpellAPIKey: config.bingSpellAPIKey,
 		Error:           err,
 	})
 	if e != nil {
-		panic(fmt.Errorf("can't construct spell checker spell: %s", e.Error()))
+		panic(fmt.Errorf("can't construct bot checker bot: %s", e.Error()))
 	}
 
 	go spellChecker.Start()

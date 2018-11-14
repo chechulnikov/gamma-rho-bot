@@ -1,24 +1,15 @@
-package spell
+package bot
 
 import (
 	"fmt"
 )
 
 type spellChecker struct {
-	listener  *listener
 	corrector *corrector
 	sender    *sender
 }
 
-func (sc *spellChecker) Start() {
-	message := make(chan chatMessage)
-	go sc.listener.start(message)
-	for {
-		go sc.handleMessage(<-message)
-	}
-}
-
-func (sc *spellChecker) handleMessage(message chatMessage) {
+func (sc *spellChecker) check(message chatMessage) {
 	isRevised, revisedText := sc.corrector.checkAndCorrect(message.text)
 	if isRevised {
 		revisedText = fmt.Sprintf("✨ %s", revisedText)

@@ -61,7 +61,7 @@ func (c *client) SendMessageAsReply(chatId int64, text string, replyToMessageId 
 	})
 
 	if _, err := http.Post(uri, contentTypeJSON, buffer); err != nil {
-		return fmt.Errorf("elegram API sendMessage method error: %s", err)
+		return fmt.Errorf("Telegram API sendMessage method error: %s", err)
 	}
 
 	return nil

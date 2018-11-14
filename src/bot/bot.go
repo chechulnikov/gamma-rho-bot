@@ -1,8 +1,9 @@
-package spell
+package bot
 
 import (
 	"fmt"
 	"gamma-rho-bot/bing"
+	"gamma-rho-bot/bot/command"
 	"gamma-rho-bot/telegram"
 )
 
@@ -13,7 +14,7 @@ type Settings struct {
 	Error           chan error
 }
 
-func NewChecker(settings Settings) (Checker, error) {
+func New(settings Settings) (Engine, error) {
 	telegramClient, err := telegram.NewBotAPIClient(settings.TelegramToken)
 	if err != nil {
 		return nil, fmt.Errorf("can't construct Telegram Bot API client error: %s", err.Error())
@@ -21,7 +22,7 @@ func NewChecker(settings Settings) (Checker, error) {
 
 	spellCheckerAPIClient, err := bing.NewSpellCheckAPIClient(settings.BingSpellAPIKey)
 	if err != nil {
-		return nil, fmt.Errorf("can't construct Bing Spell Checker API client error: %s", err.Error())
+		return nil, fmt.Errorf("can't construct Bing Spell Engine API client error: %s", err.Error())
 	}
 
 	listener := listener{
@@ -37,21 +38,24 @@ func NewChecker(settings Settings) (Checker, error) {
 		telegramClient: telegramClient,
 		error:          settings.Error,
 	}
-
-	return &spellChecker{
-		listener:  &listener,
+	spellChecker := spellChecker{
 		corrector: &corrector,
 		sender:    &sender,
+	}
+	ivCommandExecutor := command.NewIVCommandExecutor()
+	commandHandler := commandHandler{
+		ivCommandExecutor: ivCommandExecutor,
+		sender:            &sender,
+		error:             settings.Error,
+	}
+
+	return &engine{
+		listener:       &listener,
+		spellChecker:   &spellChecker,
+		commandHandler: &commandHandler,
 	}, nil
 }
 
-type Checker interface {
+type Engine interface {
 	Start()
-}
-
-type chatMessage struct {
-	id               int64
-	chatId           int64
-	text             string
-	replyToMessageId int64
 }

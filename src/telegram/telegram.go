@@ -20,11 +20,20 @@ type Update struct {
 }
 
 type Message struct {
-	Id   int64  `json:"message_id"`
-	Chat Chat   `json:"chat"`
-	Text string `json:"text"`
+	Id       int64           `json:"message_id"`
+	Chat     Chat            `json:"chat"`
+	Text     string          `json:"text"`
+	Entities []MessageEntity `json:"entities"`
 }
 
 type Chat struct {
 	Id int64 `json:"id"`
+}
+
+const BotCommandMessageEntity = "bot_command"
+
+type MessageEntity struct {
+	Type   string `json:"type"`
+	Offset int    `json:"offset"`
+	Length int    `json:"length"`
 }

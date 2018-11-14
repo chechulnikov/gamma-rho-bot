@@ -1,4 +1,4 @@
-package spell
+package bot
 
 import (
 	"fmt"
@@ -39,11 +39,34 @@ func (l *listener) start(message chan chatMessage) {
 				continue
 			}
 
-			message <- chatMessage{
+			msg := chatMessage{
 				id:     update.Message.Id,
 				chatId: update.Message.Chat.Id,
 				text:   update.Message.Text,
 			}
+
+			if len(update.Message.Entities) > 0 &&
+				update.Message.Entities[0].Type == telegram.BotCommandMessageEntity {
+				commandEntity := update.Message.Entities[0]
+
+				command := update.Message.Text[commandEntity.Offset:len(update.Message.Text)]
+
+				splittedCommand := strings.SplitN(command, " ", 2)
+
+				if len(splittedCommand) < 1 {
+					continue
+				}
+
+				msg.command = &botCommand{
+					chatId: update.Message.Chat.Id,
+					name:   strings.TrimPrefix(splittedCommand[0], "/"),
+				}
+				if len(splittedCommand) >= 2 {
+					msg.command.value = strings.TrimSpace(splittedCommand[1])
+				}
+			}
+
+			message <- msg
 		}
 	}
 }
@@ -55,4 +78,18 @@ func (l *listener) getUpdates() ([]telegram.Update, error) {
 		60,
 		[]string{"messages"},
 	)
+}
+
+type chatMessage struct {
+	id               int64
+	chatId           int64
+	text             string
+	replyToMessageId int64
+	command          *botCommand
+}
+
+type botCommand struct {
+	chatId int64
+	name   string
+	value  string
 }

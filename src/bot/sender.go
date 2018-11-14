@@ -1,4 +1,4 @@
-package spell
+package bot
 
 import (
 	"fmt"
