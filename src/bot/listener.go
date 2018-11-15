@@ -45,25 +45,8 @@ func (l *listener) start(message chan chatMessage) {
 				text:   update.Message.Text,
 			}
 
-			if len(update.Message.Entities) > 0 &&
-				update.Message.Entities[0].Type == telegram.BotCommandMessageEntity {
-				commandEntity := update.Message.Entities[0]
-
-				command := update.Message.Text[commandEntity.Offset:len(update.Message.Text)]
-
-				splittedCommand := strings.SplitN(command, " ", 2)
-
-				if len(splittedCommand) < 1 {
-					continue
-				}
-
-				msg.command = &botCommand{
-					chatId: update.Message.Chat.Id,
-					name:   strings.TrimPrefix(splittedCommand[0], "/"),
-				}
-				if len(splittedCommand) >= 2 {
-					msg.command.value = strings.TrimSpace(splittedCommand[1])
-				}
+			if botCommand, ok := tryToGetBotCommand(update); ok {
+				msg.command = botCommand
 			}
 
 			message <- msg
@@ -78,6 +61,36 @@ func (l *listener) getUpdates() ([]telegram.Update, error) {
 		60,
 		[]string{"messages"},
 	)
+}
+
+func tryToGetBotCommand(update telegram.Update) (*botCommand, bool) {
+	if len(update.Message.Entities) == 0 {
+		return nil, false
+	}
+
+	if update.Message.Entities[0].Type != telegram.BotCommandMessageEntity {
+		return nil, false
+	}
+	
+	commandEntity := update.Message.Entities[0]
+
+	command := update.Message.Text[commandEntity.Offset:len(update.Message.Text)]
+
+	splittedCommand := strings.SplitN(command, " ", 2)
+
+	if len(splittedCommand) < 1 {
+		return nil, false
+	}
+
+	result := &botCommand{
+		chatId: update.Message.Chat.Id,
+		name:   strings.TrimPrefix(splittedCommand[0], "/"),
+	}
+	if len(splittedCommand) >= 2 {
+		result.value = strings.TrimSpace(splittedCommand[1])
+	}
+
+	return result, true
 }
 
 type chatMessage struct {
