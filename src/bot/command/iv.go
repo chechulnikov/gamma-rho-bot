@@ -66,7 +66,7 @@ func getIrregularVerbs() map[string]*irregularVerb {
 		}
 
 		addSplittedValues := func(value string) {
-			for _, val := range strings.Split(values[0], splitString) {
+			for _, val := range strings.Split(value, splitString) {
 				result[val] = &iv
 			}
 		}
