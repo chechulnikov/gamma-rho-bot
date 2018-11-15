@@ -40,7 +40,7 @@ type irregularVerb struct {
 }
 
 func getIrregularVerbs() map[string]*irregularVerb {
-	csvFile, err := os.Open("iv.csv")
+	csvFile, err := os.Open("./data/iv.csv")
 	if err != nil {
 		log.Fatalln("can not load irregular verbs database")
 	}
@@ -49,7 +49,6 @@ func getIrregularVerbs() map[string]*irregularVerb {
 	reader := csv.NewReader(bufio.NewReader(csvFile))
 	reader.Comma = ';'
 
-	const splitString = ",()/ "
 	for {
 		values, err := reader.Read()
 		if err == io.EOF {
@@ -66,7 +65,7 @@ func getIrregularVerbs() map[string]*irregularVerb {
 		}
 
 		addSplittedValues := func(value string) {
-			for _, val := range strings.Split(value, splitString) {
+			for _, val := range strings.Split(value, "/") {
 				result[val] = &iv
 			}
 		}
