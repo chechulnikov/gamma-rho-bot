@@ -71,7 +71,7 @@ func tryToGetBotCommand(update telegram.Update) (*botCommand, bool) {
 	if update.Message.Entities[0].Type != telegram.BotCommandMessageEntity {
 		return nil, false
 	}
-	
+
 	commandEntity := update.Message.Entities[0]
 
 	command := update.Message.Text[commandEntity.Offset:len(update.Message.Text)]
