@@ -1,4 +1,5 @@
 #!/bin/bash
+export $(egrep -v '^#' .env | xargs)
 docker rm -f gamma-rho-bot
 docker run -d \
     --name gamma-rho-bot \
