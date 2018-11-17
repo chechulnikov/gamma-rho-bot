@@ -26,7 +26,7 @@ func (h *ivCommandExecutor) Execute(value string) string {
 	}
 
 	return fmt.Sprintf(
-		"💡\nBase form: _%s_\nPast Simple: _%s_\nPast Participle: _%s_",
+		"💡\nBase form: `%s`\nPast Simple: `%s`\nPast Participle: `%s`",
 		iv.v1,
 		iv.v2,
 		iv.v3,
