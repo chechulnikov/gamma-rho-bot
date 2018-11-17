@@ -1,89 +1,203 @@
-be/is/am/are;was/were;been
-beat;beat;beaten
-become;became;become
-begin;began;begun
-bend;bent;bent
-bet;bet;bet
-bid;bid;bid
-bite;bit;bitten
-blow;blew;blown
-break;broke;broken
-bring;brought;brought
-build;built;built
-burn;burned/burnt;burned/burnt
-buy;bought;bought
-catch;caught;caught
-choose;chose;chosen
-come;came;come
-cost;cost;cost
-cut;cut;cut
-dig;dug;dug
-dive;dove;dived
-do;did;done
-draw;drew;drawn
-dream;dreamed/dreamt;dreamed/dreamt
-drive;drove;driven
-drink;drank;drunk
-eat;ate;eaten
-fall;fell;fallen
-feel;felt;felt
-fight;fought;fought
-find;found;found
-ly;flew;flown
-forget;forgot;forgotten
-forgive;forgave;forgiven
-freeze;froze;frozen
-get;got;gotten
-give;gave;given
-go;went;gone
-grow;grew;grown
-hang;hung;hung
-have;had;had
-hear;heard;heard
-hide;hid;hidden
-hit;hit;hit
-hold;held;held
-hurt;hurt;hurt
-keep;kept;kept
-know;knew;known
-lay;laid;laid
-lead;led;led
-leave;left;left
-lend;lent;lent
-let;let;let
-lie;lay;lain
-lose;lost;lost
-make;made;made
-mean;meant;meant
-meet;met;met
-pay;paid;paid
-put;put;put
-read;read;read
-ride;rode;ridden
-ring;rang;rung
-rise;rose;risen
-run;ran;run
-say;said;said
-see;saw;seen
-sell;sold;sold
-send;sent;sent
-show;showed;shown
-shut;shut;shut
-sing;sang;sung
-sit;sat;sat
-sleep;slept;slept
-speak;spoke;spoken
-spend;spent;spent
-stand;stood;stood
-swim;swam;swum
-take;took;taken
-teach;taught;taught
-tear;tore;torn
-tell;told;told
-think;thought;thought
-throw;threw;thrown
-understand;understood;understood
-wake;woke;woken
-wear;wore;worn
-win;won;won
-write;wrote;written
+abide [əˈbʌɪd];abided [əˈbʌɪdɪd] / abode [əˈbəʊd];abided [əˈbʌɪdɪd]
+arise [əˈraɪz];arose [əˈroʊz];arisen [əˈrɪzn]
+awake [əˈwaɪk];awoke [əˈwoʊk];awoken [əˈwoʊkn]
+be [bi:] / am / are / is;was [wɒz] / were [wɜ:];been [bi:n]
+bear [bɛə];bore [bɔ:];borne [bɔ:n]
+beat [bi:t];beat [bi:t];beaten [bi:tn]
+become [bɪˈkʌm];became [bɪˈkeɪm];become [bɪˈkʌm]
+begin [bɪˈgɪn];began [bɪˈgæn];begun [bɪˈgʌn]
+behold [bɪˈhəʊld];beheld [bɪˈhɛld];beheld [bɪˈhɛld]
+bend [bɛnd];bent [bɛnt];bent [bɛnt]
+bereave [bɪˈriːv];bereft [bɪˈrɛft] / bereaved [bɪˈriːvd];bereft [bɪˈrɛft] / bereaved [bɪˈriːvd]
+beseech [bɪˈsiːtʃ];besought [bɪˈsɔːt] / beseeched [bɪˈsiːtʃt];besought [bɪˈsɔːt] / beseeched [bɪˈsiːtʃt]
+beset [bɪˈsɛt];beset [bɪˈsɛt];beset [bɪˈsɛt]
+bet [bɛt];bet [bɛt];bet [bɛt]
+bid [bɪd];bid [bɪd] / bade [beɪd];bidden [bɪdn]
+bid [bɪd];bid [bɪd];bid [bɪd]
+bind [baɪnd];bound [baʊnd];bound [baʊnd]
+bite [bʌɪt];bit [bɪt];bitten [bɪtn]
+bleed [bli:d];bled [blɛd];bled [blɛd]
+blow [bloʊ];blew [blu:];blown [blu:]
+break [breɪk];broke [broʊk];broken [broʊkən]
+breed [bri:d];bred [brɛd];bred [brɛd]
+bring [brɪŋ];brought [brɔ:t];brought [brɔ:t]
+build [bɪld];built [bɪlt];built [bɪlt]
+burn [bɜ:n];burned [bɜ:nd] / burnt [bɜ:nt];burned [bɜ:nd] / burnt [bɜ:nt]
+burst [bɜ:st];burst [bɜ:st];burst [bɜ:st]
+bust [bʌst];busted [bʌstɪd] / bust [bʌst];busted [bʌstɪd] / bust [bʌst]
+buy [baɪ];bought [bɔ:t];bought [bɔ:t]
+cast [kɑ:st];cast [kɑ:st];cast [kɑ:st]
+catch [kætʃ];caught [kɔ:t];caught [kɔ:t]
+choose [tʃu:z];chose [tʃoʊz];chosen [tʃoʊzn]
+cleave [kli:v];cleft [klɛft];cleft [klɛft]
+cling [klɪŋ];clung [klʌŋ];clung [klʌŋ]
+clothe [kloʊð];clothed [kloʊðd] / clad [klæd];clothed/clad [kloʊðd/klæd]
+come [kʌm];came [keɪm];come [keɪm]
+cost [kɒst];cost [kɒst];cost [kɒst]
+creep [kri:p];crept [krɛpt];crept [krɛpt]
+cut [kʌt];cut [kʌt];cut [kʌt]
+deal [di:l];dealt [dɛlt];dealt [dɛlt]
+dig [dɪg];dug [dʌg];dug [dʌg]
+disprove [dɪsˈpruːv];disproved [dɪsˈpruːvd];disproved [dɪsˈpruːvd] / disproven [dɪsˈpru:vən]
+dive [daɪv];dove [doʊv] /dived [daɪvd];dived [daɪvd]
+do [du:];did [dɪd];done [dʌn]
+draw [drɔ:];drew [dru:];drawn [drɔ:n]
+dream [dri:m];dreamed [dri:md] / dreamt [drɛmt];dreamed [dri:md] / dreamt [drɛmt]
+drink [drɪnk];drank [drænk];drunk [drʌnk]
+drive [draɪv];drove [droʊv];driven [drɪvn]
+dwell [dwel];dwelt [dwɛlt] / dwelled [dwɛld];dwelt [dwɛlt] / dwelled [dwɛld]
+eat [i:t];ate [ɛt];eaten [i:tn]
+fall [fɔ:l];fell [fɛl];fallen [fɔ:lən]
+feed [fi:d];fed [fɛd];fed [fɛd]
+feel [fi:l];felt [fɛlt];felt [fɛlt]
+fight [faɪt];fought [fɔ:t];fought [fɔ:t]
+find [faɪnd];found [faʊnd];found [faʊnd]
+fit [fɪt];fit [fɪt] / fitted [ˈfɪtɪd];fit [fɪt] / fitted [ˈfɪtɪd]
+flee [fli:];fled [flɛd];fled [flɛd]
+fling [flɪŋ];flung [flʌŋ];flung [flʌŋ]
+fly [flaɪ];flew [flu:];flown [floʊn]
+forbid [fəˈbɪd];forbade [fəˈbeɪd];forbidden [fəbɪdn]
+forgo [fɔːˈɡəʊ];forewent [fɔːˈwɛnt];foregone [fɔːˈɡɒn]
+foresee [fɔːˈsiː];foresaw [fɔːˈsɔː];foreseen [fɔːˈsiːn]
+foretell [fɔːˈtɛl];foretold [fɔːˈtəʊld];foretold [fɔːˈtəʊld]
+forget [fəˈget];forgot [fəˈgɒt];forgotten [fəˈgɒtn]
+forgive [fəˈgɪv];forgave [fəˈgeɪv];forgiven [fəgɪvn]
+forsake [fəˈseɪk];forsook [fəˈsʊk];forsaken [fəˈseɪkn]
+freeze [fri:z];froze [froʊz];frozen [froʊzn]
+get [get];got [gɒt];gotten [gɒtn] / got [gɒt]
+gild [gɪld];gilt [gɪlt];gilt [gɪlt]
+give [gɪv];gave [geɪv];given [gɪvn]
+go [goʊ];went [wɛnt];gone [ɡɒn]
+grind [graɪnd];ground [graʊnd];ground [graʊnd]
+grow [groʊ];grew [gru:];grown [groʊn]
+hang [hæŋ];hung [hʌŋ];hung [hʌŋ]
+have [hæv];had [hæd];had [hæd]
+hear [hɪə];heard [hɜ:d];heard [hɜ:d]
+heave [hi:v];heaved [hi:vd] / hove [həʊv];heaved [hi:vd] / hove [həʊv]
+hew [hju:];hewed [hju:d];hewn [hju:n] / hewed [hju:d]
+hide [haɪd];hid [hɪd];hidden [hɪdn]
+hit [hɪt];hit [hɪt];hit [hɪt]
+hold [hoʊld];held [hɛld];held [hɛld]
+hurt [hɜ:t];hurt [hɜ:t];hurt [hɜ:t]
+inlay [ɪnˈleɪ];inlaid [ɪnˈleɪd];inlaid [ɪnˈleɪd]
+input [ˈɪnpʊt];input [ˈɪnpʊt];input [ˈɪnpʊt]
+interweave [ɪntəˈwiːv];interwove [ɪntəˈwəʊv];interwoven [ɪntəˈwəʊv(ə)n]
+keep [ki:p];kept [kɛpt];kept [kɛpt]
+kneel [ni:l];knelt [nɛlt];knelt [nɛlt]
+knit [nɪt];knit [nɪt];knit [nɪt]
+know [noʊ];knew [nju:];known [noʊn]
+lay [leɪ];laid [leɪd];laid [leɪd]
+lead [li:d];led [lɛd];led [lɛd]
+lean [li:n];leant [lɛnt];leant [lɛnt]
+leap [li:p];leapt [lɛpt];leapt [lɛpt]
+learn [lɜ:n];learned [lɜ:nd] /learnt [lɜ:nt];learnt [lɜ:nt]
+leave [li:v];left [lɛft];left [lɛft]
+lend [lɛnd];lent [lɛnt];lent [lɛnt]
+let [lɛt];let [lɛt];let [lɛt]
+lie [laɪ];lay [leɪ];lain [leɪn]
+lie [laɪ];lied [laɪd];lied [laɪd]
+light [laɪt];lit [lɪt] / lighted [laɪtɪd];lit [lɪt] / lighted [laɪtɪd]
+lose [lu:z];lost [lɒst];lost [lɒst]
+make [meɪk];made [meɪd];made [meɪd]
+mean [mi:n];meant [mɛnt];meant [mɛnt]
+meet [mi:t];met [mɛt];met [mɛt]
+mistake [mɪisˈteɪk];mistook [mɪˈstʊk];mistaken [mɪˈsteɪk(ə)n]
+mow [moʊ];mowed [moʊd];mown [moʊn]
+overcome [əʊvəˈkʌm];overcame [əʊvəˈkeɪm];overcome [əʊvəˈkʌm]
+pay [peɪ];paid [peɪd];paid [peɪd]
+plead [pli:d];pleaded [pli:dɪd] / pled [plɛd];pleaded [pli:dɪd] / pled [plɛd]
+prove [pru:v];proved [pru:vd];proven [pru:vən] / proved [pru:vd]
+put [pʊt];put [pʊt];put [pʊt]
+read [ri:d];read [rɛd];read [rɛd]
+relay [riːˈleɪ];relaid [riːˈleɪd];relaid [riːˈleɪd]
+relay [rɪˈleɪ]; relayed [rɪˈleɪd];relayed [rɪˈleɪd]
+rid [rɪd];rid [rɪd];rid [rɪd]
+ride [raɪd];rode [roʊd];ridden [rɪdn]
+ring [rɪŋ];rang [ræŋ];rung [rʌŋ]
+rise [raɪz];rose [roʊz];risen [rɪzn]
+run [rʌn];ran [ræn];run [rʌn]
+saw [sɔ:];sawed [sɔ:d];sawed/sawn [sɔ:d/sɔ:n]
+say [sɛɪ];said [sɛd];said [sɛd]
+see [si:];saw [sɔ:];seen [si:n]
+seek [si:k];sought [sɔ:t];sought [sɔ:t]
+sell [sel];sold [soʊld];sold [soʊld]
+send [sɛnd];sent [sɛnt];sent [sɛnt]
+set [sɛt];set [sɛt];set [sɛt]
+sew [səʊ];sewed [səʊd];sewn [səʊn]
+shake [ʃeɪk];shook [ʃʊk];shaken [ʃeɪkən]
+shave [ʃeɪv];shaved [ʃeɪvd];shaved [ʃeɪvd] / shaven [ʃeɪvən]
+shear [ʃɪə];sheared [ʃɪəd];sheared [ʃɪəd] / shorn [ʃɔ:n]
+shed [ʃed];shed [ʃɛd];shed [ʃɛd]
+shine [ʃaɪn];shone [ʃoʊn];shone [ʃoʊn]
+shit [ʃit];shit [ʃit];shit [ʃit]
+shoe [ʃu:];shod [ʃɒd];shod [ʃɒd]
+shoot [ʃu:t];shot [ʃɒt];shot [ʃɒt]
+show [ʃoʊ];showed [ʃoʊd];shown [ʃoʊn]
+shrink [ʃrɪŋk];shrank [ʃræŋk];shrunk [ʃrʌŋk]
+shut [ʃʌt];shut [ʃʌt];shut [ʃʌt]
+sing [sɪŋ];sang [sæŋ];sung [sʌŋ]
+sink [sɪŋk];sank [sæŋk];sunk [sʌŋk]
+sit [sɪt];sat [sæt];sat [sæt]
+slay [sleɪ];slew [slu:];slain [sleɪn]
+slay [sleɪ]; slayed [sleɪd];slayed [sleɪd]
+sleep [sli:p];slept [slɛpt];slept [slɛpt]
+slide [slaɪd];slid [slɪd];slid [slɪd]
+sling [slɪŋ];slung [slʌŋ];slung [slʌŋ]
+slink [slɪŋk];slinked [slɪŋkt] / slunk [slʌŋk];slinked [slɪŋkt] / slunk [slʌŋk]
+slit [slɪt];slit [slɪt];slit [slɪt]
+smell [smel];smelt [smɛlt];smelt [smɛlt]
+smite [smʌɪt];smote [sməʊt];smitten [ˈsmɪtn]
+sow [soʊ];sowed [soʊd];sown [soʊn]
+speak [spi:k];spoke [spoʊk];spoken [spoʊkən]
+speed [spi:d];sped [spɛd];sped [spɛd]
+spell [spel];spelt [spɛlt];spelt [spɛlt]
+spend [spend];spent [spɛnt];spent [spɛnt]
+spill [spɪl];spilt [spɪlt];spilt [spɪlt]
+spin [spɪn];spun [spʌn];spun [spʌn]
+spit [spɪt];spit [spɪt] / spat [spæt];spit [spɪt] / spat [spæt]
+split [splɪt];split [splɪt];split [splɪt]
+spoil [spoɪl];spoiled [spoɪld] / spoilt [spoɪlt];spoiled [spoɪld] / spoilt [spoɪlt]
+spread [spred];spread [sprɛd];spread [sprɛd]
+spring [sprɪŋ];sprang [spræŋ];sprung [sprʌŋ]
+stand [stænd];stood [stʊd];stood [stʊd]
+steal [sti:l];stole [stoʊl];stolen [stoʊlən]
+stick [stɪk];stuck [stʌk];stuck [stʌk]
+sting [stɪŋ];stung [stʌŋ];stung [stʌŋ]
+stink [stɪŋk];stank [stræŋk];stunk [stʌŋk]
+strew [struː];strewed [struːd];strewn [struːn]
+stride [straɪd];strode [stroʊd];stridden [strɪdn]
+strike [straɪk];struck [strʌk];struck [strʌk] / stricken [strɪkən]
+string [strɪŋ];strung [srtʌŋ];strung [strʌŋ]
+strive [straɪv];strove [stroʊv] / strived [straɪvd];striven [strɪvən] / strived [straɪvd]
+swear [swɛə];swore [swɔ:];sworn [swɔ:n]
+sweat [swet];sweat [swɛt] / sweated ['swɛtɪd];sweat [swɛt] / sweated [swɛtɪd]
+sweep [swi:p];swept [swɛpt];swept [swɛpt]
+swell [swel];swelled [swɛld];swollen [swoʊlən] / swelled [swɛld]
+swim [swɪm];swam [swæm];swum [swʌm]
+swing [swɪŋ];swung [swʌŋ];swung [swʌŋ]
+take [teɪk];took [tʊk];taken ['teɪkən]
+teach [ti:tʃ];taught [tɔ:t];taught [tɔ:t]
+tear [tɛə];tore [tɔ:];torn [tɔ:n]
+tell [tel];told [toʊld];told [toʊld]
+think [θɪŋk];thought [θɔ:t];thought [θɔ:t]
+throw [θroʊ];threw [θru:];thrown [θroʊn]
+thrust [θrʌst];thrust [θrʌst];thrust [θrʌst]
+tread [tred];trod [trɒd];trodden [trɒdn]
+undergo [ʌndəˈɡəʊ];underwent [ʌndə'wɛnt];undergone [ʌndə'ɡɒn]
+understand [ʌndəˈstænd];understood [ʌndəˈstʊd];understood [ʌndəˈstʊd]
+undertake [ʌndəˈteɪk];undertook [ʌndəˈtʊk];undertaken [ʌndəˈteɪk(ə)n]
+undo ['ʌn'du:];undid ['ʌn'dɪd];undone ['ʌn'dʌn]
+upset [ʌp'set];upset [ʌp'set];upset [ʌp'set]
+wake [weɪk];woke [woʊk]/ waked [weɪkt];woken [woʊkən] / waked [weɪkt]
+wear [wɛə];wore [wɔ:];worn [wɔ:n]
+weave [wi:v];wove [woʊv] / weaved [wi:vd];woven [woʊvən] / weaved [woʊvən/wi:vd]
+wed [wed];wed [wɛd] / wedded ['wɛdɪd];wed [wɛd] / wedded ['wɛdɪd]
+weep [wi:p];wept [wɛpt];wept [wɛpt]
+wet [wɛt];wet [wɛt];wet [wɛt]
+win [wɪn];won [wʌn];won [wʌn]
+wind [waɪnd];wound [waʊnd];wound [waʊnd]
+withdraw [wɪðˈdrɔː];withdrew [wɪð'druː];withdrawn [wɪð'drɔːn]
+withhold [wɪðˈhəʊld];withheld [wɪðˈhɛld];withheld [wɪðˈhɛld]
+withstand [wɪðˈstand];withstood [wɪðˈstʊd];withstood [wɪðˈstʊd]
+wring [rɪŋ];wrung [rʌŋ];wrung [rʌŋ]
+write [raɪt];wrote [roʊt];written [rɪtn]
