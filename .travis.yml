@@ -1,0 +1,10 @@
+sudo: required
+
+services:
+  - docker
+  
+env:
+ - GRAMMAR_BOT_IMAGE=gamma-rho-bot
+ 
+script:
+  - build/build.sh
