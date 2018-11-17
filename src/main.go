@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	fmt.Println("Grammar Bot started")
+	fmt.Println("γρ-bot started")
 
 	config, e := loadConfig()
 	if e != nil {
@@ -17,22 +17,23 @@ func main() {
 	err := make(chan error)
 	go logErrors(err)
 
-	spellChecker, e := bot.New(bot.Settings{
+	engine, e := bot.NewEngine(bot.Settings{
 		TelegramToken:   config.telegramBotToken,
 		ChatsIds:        config.chatsIds,
 		BingSpellAPIKey: config.bingSpellAPIKey,
 		Error:           err,
 	})
 	if e != nil {
-		panic(fmt.Errorf("can't construct bot checker bot: %s", e.Error()))
+		panic(fmt.Errorf("can't build bot: %s", e.Error()))
 	}
 
-	go spellChecker.Start()
+	go engine.Start()
 
 	<-make(chan struct{})
 }
 
 func logErrors(err chan error) {
-	e := <-err
-	log.Println(e)
+	for {
+		log.Println(<-err)
+	}
 }

@@ -7,14 +7,16 @@ type engine struct {
 }
 
 func (e *engine) Start() {
-	message := make(chan chatMessage)
+	message := make(chan *chatMessage)
+
 	go e.listener.start(message)
+
 	for {
 		go e.handleMessage(<-message)
 	}
 }
 
-func (e *engine) handleMessage(message chatMessage) {
+func (e *engine) handleMessage(message *chatMessage) {
 	if message.command != nil {
 		e.commandHandler.Handle(message.command)
 		return

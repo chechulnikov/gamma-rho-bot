@@ -9,7 +9,7 @@ type spellChecker struct {
 	sender    *sender
 }
 
-func (sc *spellChecker) check(message chatMessage) {
+func (sc *spellChecker) check(message *chatMessage) {
 	isRevised, revisedText := sc.corrector.checkAndCorrect(message.text)
 	if isRevised {
 		revisedText = fmt.Sprintf("✨ %s", revisedText)

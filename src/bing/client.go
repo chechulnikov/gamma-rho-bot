@@ -15,7 +15,7 @@ type client struct {
 }
 
 func (c *client) Check(text string) (*CheckResult, error) {
-	client := &http.Client{}
+	client := new(http.Client)
 	form := url.Values{}
 	form.Add("text", text)
 	request, err := http.NewRequest(http.MethodPost, apiEndpointUri, strings.NewReader(form.Encode()))
@@ -23,20 +23,19 @@ func (c *client) Check(text string) (*CheckResult, error) {
 	request.Header.Add("Ocp-Apim-Subscription-Key", c.apiKey)
 
 	response, err := client.Do(request)
-
-	defer response.Body.Close()
+	if response != nil {
+		defer response.Body.Close()
+	}
 
 	if err != nil {
 		return nil, fmt.Errorf("Bing Spell API error: %s", err)
 	}
 
-	defer response.Body.Close()
-
 	if response.StatusCode != http.StatusOK {
 		return nil, fmt.Errorf("Bing Spell API returns %d", response.StatusCode)
 	}
 
-	result := &CheckResult{}
+	result := new(CheckResult)
 	if err = json.NewDecoder(response.Body).Decode(result); err != nil {
 		return nil, fmt.Errorf(
 			"cann't decode JSON from response of Bing Spell API: %s",

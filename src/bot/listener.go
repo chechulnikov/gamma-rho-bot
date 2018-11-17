@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"gamma-rho-bot/telegram"
 	"strings"
+	"time"
 )
 
 type listener struct {
@@ -13,11 +14,12 @@ type listener struct {
 	error          chan error
 }
 
-func (l *listener) start(message chan chatMessage) {
+func (l *listener) start(message chan *chatMessage) {
 	for {
 		updates, err := l.getUpdates()
 		if err != nil {
-			l.error <- fmt.Errorf("can't get updates from telegram: %s", err.Error())
+			l.error <- fmt.Errorf("can't get bot updates from Telegram: %s", err.Error())
+			time.Sleep(time.Second)
 			continue
 		}
 
@@ -25,31 +27,12 @@ func (l *listener) start(message chan chatMessage) {
 			continue
 		}
 
-		l.updatesOffset = updates[len(updates)-1].Id + 1
+		l.recalculateOffset(updates)
 
 		for _, update := range updates {
-			if l.chatsIds != nil {
-				if _, ok := l.chatsIds[update.Message.Chat.Id]; !ok {
-					continue
-				}
+			if msg, ok := l.tryToFormMessage(update); ok {
+				message <- msg
 			}
-
-			update.Message.Text = strings.TrimSpace(update.Message.Text)
-			if update.Message.Text == "" {
-				continue
-			}
-
-			msg := chatMessage{
-				id:     update.Message.Id,
-				chatId: update.Message.Chat.Id,
-				text:   update.Message.Text,
-			}
-
-			if botCommand, ok := tryToGetBotCommand(update); ok {
-				msg.command = botCommand
-			}
-
-			message <- msg
 		}
 	}
 }
@@ -61,6 +44,35 @@ func (l *listener) getUpdates() ([]telegram.Update, error) {
 		60,
 		[]string{"messages"},
 	)
+}
+
+func (l *listener) recalculateOffset(updates []telegram.Update) {
+	l.updatesOffset = updates[len(updates)-1].Id + 1
+}
+
+func (l *listener) tryToFormMessage(update telegram.Update) (*chatMessage, bool) {
+	if l.chatsIds != nil {
+		if _, ok := l.chatsIds[update.Message.Chat.Id]; !ok {
+			return nil, false
+		}
+	}
+
+	update.Message.Text = strings.TrimSpace(update.Message.Text)
+	if update.Message.Text == "" {
+		return nil, false
+	}
+
+	message := &chatMessage{
+		id:     update.Message.Id,
+		chatId: update.Message.Chat.Id,
+		text:   update.Message.Text,
+	}
+
+	if botCommand, ok := tryToGetBotCommand(update); ok {
+		message.command = botCommand
+	}
+
+	return message, true
 }
 
 func tryToGetBotCommand(update telegram.Update) (*botCommand, bool) {
@@ -91,18 +103,4 @@ func tryToGetBotCommand(update telegram.Update) (*botCommand, bool) {
 	}
 
 	return result, true
-}
-
-type chatMessage struct {
-	id               int64
-	chatId           int64
-	text             string
-	replyToMessageId int64
-	command          *botCommand
-}
-
-type botCommand struct {
-	chatId int64
-	name   string
-	value  string
 }

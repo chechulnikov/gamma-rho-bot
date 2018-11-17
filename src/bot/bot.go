@@ -14,7 +14,7 @@ type Settings struct {
 	Error           chan error
 }
 
-func New(settings Settings) (Engine, error) {
+func NewEngine(settings Settings) (Engine, error) {
 	telegramClient, err := telegram.NewBotAPIClient(settings.TelegramToken)
 	if err != nil {
 		return nil, fmt.Errorf("can't construct Telegram Bot API client error: %s", err.Error())

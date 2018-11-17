@@ -25,11 +25,12 @@ func (c *client) GetUpdates(offset int64, limit int, timeout int, allowedUpdates
 	}{Offset: offset, Limit: limit, Timeout: timeout, AllowedUpdates: allowedUpdates})
 
 	response, err := http.Post(uri, contentTypeJSON, buffer)
+	if response != nil {
+		defer response.Body.Close()
+	}
 	if err != nil {
 		return nil, fmt.Errorf("Telegram API getUpdates method error: %s", err)
 	}
-
-	defer response.Body.Close()
 
 	if response.StatusCode != http.StatusOK {
 		return nil, fmt.Errorf("Telegram API getUpdates method returns %d", response.StatusCode)
