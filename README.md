@@ -2,7 +2,7 @@
 Simple spell check and grammar expert bot for Telegram via Bing Spell API.
 
 ## Status
-[![Build Status](https://travis-ci.com/chechulnikov/gamma-rho-bot.svg?branch=master)
+![Build Status](https://travis-ci.com/chechulnikov/gamma-rho-bot.svg?branch=master)
 
 ## How to install
 1. Create a bot in Telegram via BotFather bot. You should get bot token.
